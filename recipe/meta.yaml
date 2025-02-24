@@ -1,5 +1,5 @@
 {% set name = "check-jsonschema" %}
-{% set version = "0.30.0" %}
+{% set version = "0.31.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/check_jsonschema-{{ version }}.tar.gz
-  sha256: c912ef9cf204c17d2e9d832b9088040f1c0c3f178ebda9805a56e5f35b29f5f2
+  sha256: fdcab9feaa5314e4187c4121558945b43ad70e046d1bbb149c6dcbfab488bf6d
 
 build:
   noarch: python
@@ -23,11 +23,10 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - importlib-resources >=1.4.0
     - tomli >=2.0
-    - ruamel.yaml ==0.18.6
+    - ruamel.yaml ==0.18.7
     - jsonschema >=4.18.0,<5.0
-    - regress >=0.4.0
+    - regress >=2024.11.1
     - requests <3.0
     - click >=8,<9
 
