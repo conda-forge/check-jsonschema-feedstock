@@ -1,13 +1,13 @@
 {% set name = "check-jsonschema" %}
-{% set version = "0.38.0" %}
+{% set version = "0.38.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/check_jsonschema-{{ version }}.tar.gz
-  sha256: bb6899cc24ab0ced664e4646423d35b72db245cea75109c0b9e64d13087d1b8c
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/check_jsonschema-{{ version }}.tar.gz
+  sha256: 6b358ad8da9a41d7a61707739aa016564f4745bcb28899bd3b62739092e96bac
 
 build:
   noarch: python
@@ -28,7 +28,7 @@ requirements:
     - jsonschema >=4.18.0,<5.0
     - regress >=2024.11.1
     - requests <3.0
-    - click >=8,<9
+    - click >=8.5,<9  # Upstream declared wrong minimum version. We fixed it. Fixed upstream in 0.38.2
 
 test:
   commands:
