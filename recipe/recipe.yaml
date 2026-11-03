@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: check-jsonschema
-  version: "0.38.2"
+  version: "0.39.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/check_jsonschema-${{ version }}.tar.gz
-  sha256: 967176475f9eddd2809baabf7e0d157f7eb482b06ac002a29a79788c0c8a5a90
+  sha256: 33340a2f885e207411c7a7d1db0a052ba24a4e58c92a47f54231e4a128af2764
 
 build:
   number: 0
@@ -23,11 +23,10 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools >=61.2
+    - flit-core >=3.12.0
     - pip
   run:
     - python >=${{ python_min }}
-    - tomli >=2.0
     - ruamel.yaml >=0.18.10,<0.20.0
     - jsonschema >=4.18.0,<5.0
     - regress >=2024.11.1
