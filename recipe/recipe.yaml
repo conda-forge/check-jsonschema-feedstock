@@ -23,11 +23,10 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools >=61.2
+    - flit-core >=3.12.0
     - pip
   run:
     - python >=${{ python_min }}
-    - tomli >=2.0
     - ruamel.yaml >=0.18.10,<0.20.0
     - jsonschema >=4.18.0,<5.0
     - regress >=2024.11.1
